@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+static void nextMove(int n, int r, int c, String [] grid){
+     int xcord=0;
+    int ycord=0;
+    for ( int i = 0 ; i <n-1; i++){
+        String s = grid[i];
+        xcord=i;
+        for(int x =0; x<=n-1;x++){
+            if(s.charAt(x)=='p'){
+                
+                ycord=x;
+                
+             
+                
+                if(xcord==r){
+                    if(ycord>c){System.out.println("RIGHT");return;}
+                    else {System.out.println("LEFT");return;}
+                    
+                }else if(xcord<r){System.out.println("UP");return;}
+               
+                else{ System.out.println("DOWN");return;}
+                  
+                
+            }
+            
+            
+        }
+      
+        //System.out.println(ycord);
+    }
+    System.out.println("Failed");
+    System.out.println(xcord);
+    System.out.println(ycord);
+    
+    
+    
+    
+    
+  }
+
+public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n,r,c;
+        n = in.nextInt();
+        r = in.nextInt();
+        c = in.nextInt();
+        in.useDelimiter("\n");
+        String grid[] = new String[n];
+
+
+        for(int i = 0; i < n; i++) {
+            grid[i] = in.next();
+        }
+
+    nextMove(n,r,c,grid);
+
+    }
+}
